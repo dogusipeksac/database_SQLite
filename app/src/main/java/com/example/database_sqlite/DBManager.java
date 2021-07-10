@@ -2,8 +2,10 @@ package com.example.database_sqlite;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteQueryBuilder;
 import android.widget.Toast;
 
 public class DBManager {
@@ -12,6 +14,8 @@ public class DBManager {
     static  final  String tableName="Login";
     static  final  String columnUserName="UserName";
     static  final  String columnUserPassword="Password";
+    static  final  String columnUserId="ID";
+
     static final int DBVersion=3;
     //create table Login(Id integer primary key autincrement,Username text,Password text)
 
@@ -48,5 +52,26 @@ public class DBManager {
         System.out.println("afssssssssssssssssss"+ID);
         return ID;
 
+    }
+    public Cursor query(String[] projection
+            ,String selection
+            ,String[] selectionArgs
+            ,String sortOrder){
+        SQLiteQueryBuilder qb=new SQLiteQueryBuilder();
+        qb.setTables(tableName);
+        Cursor cursor=qb.query(sqLiteDatabase,projection, selection,selectionArgs,null, null,sortOrder);
+        return  cursor;
+    }
+    public int Delete(String selection
+            ,String[] selectionArgs){
+        int count=sqLiteDatabase.delete(tableName,selection,selectionArgs);
+        return  count;
+
+    }
+
+    public  int Update(ContentValues values,String Selection,String[] SelectionArgs)
+    {
+        int count=sqLiteDatabase.update(tableName,values,Selection,SelectionArgs);
+        return count;
     }
 }

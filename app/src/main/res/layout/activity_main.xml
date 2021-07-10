@@ -32,21 +32,29 @@
             android:inputType="textPassword" />
 
         <LinearLayout
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <Button
-                android:layout_margin="20dp"
+                android:layout_margin="3dp"
                 android:onClick="saveButton"
                 android:id="@+id/saveClickButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Register/Save" />
 
+          <!--  <Button
+                android:id="@+id/updateBu"
+                android:layout_margin="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Update"
+                android:onClick="updateBu"/>
+-->
             <Button
-                android:layout_margin="20dp"
+                android:layout_margin="3dp"
                 android:id="@+id/loadButton"
                 android:onClick="loadButton"
                 android:layout_width="match_parent"
