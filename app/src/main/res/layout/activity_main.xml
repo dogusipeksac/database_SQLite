@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_marginTop="20dp"
+            android:id="@+id/userName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="enter username"/>
+
+        <EditText
+            android:hint="enter password"
+            android:layout_marginTop="20dp"
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPassword" />
+
+        <LinearLayout
+            android:layout_margin="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_margin="20dp"
+                android:onClick="saveButton"
+                android:id="@+id/saveClickButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Register/Save" />
+
+            <Button
+                android:layout_margin="20dp"
+                android:id="@+id/loadButton"
+                android:onClick="loadButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Load" />
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/showStudent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+</RelativeLayout>
